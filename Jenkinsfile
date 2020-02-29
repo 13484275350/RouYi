@@ -77,6 +77,7 @@ pipeline {
 				attachLog: true,
                 subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+				    <p>Sonarqube result at "<a href="http://139.217.229.117/dashboard?id=RuoYi">RouYi</a>" </p>
                     <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
                 to: "13484275350@163.com",
                 from: "1197440664@qq.com"
@@ -84,7 +85,6 @@ pipeline {
          }
          failure {
             emailext (
-			    attachmentsPattern: 'myselenium/chrome.png',
 				attachLog: true,
                 subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
