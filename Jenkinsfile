@@ -29,6 +29,7 @@ pipeline {
          }
          post {
              always {
+			     sh "cp -u target/surefire-reports test-reports"
                  junit 'target/surefire-reports/*.xml'  //测试报告
              }
          }
