@@ -62,7 +62,7 @@ pipeline {
             echo 'Test on DEV start'
             sh "curl -L 40.73.246.155:8080"
 			echo 'seleniumtest'
-			sh "docker run --name python --rm -v /home/jenkins/workspace/Demo/target/seleniumtest:/usr/src/myselenium -w /usr/src/myselenium python:latest python /usr/src/myselenium/test.py"
+			sh "docker run --name python --rm -v /home/jenkins/workspace/Demo/myselenium:/usr/src/myselenium -w /usr/src/myselenium python:latest python /usr/src/myselenium/test.py"
 			echo 'chrome.png'
             echo 'Test on DEV end'
          }
